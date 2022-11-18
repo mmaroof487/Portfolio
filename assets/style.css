@@ -172,18 +172,30 @@ main {
 }
 /* aboutme */
 .aboutme {
+  width: 100%;
   display: flex;
   justify-content: flex-start;
+  /* justify-content: space-evenly; */
   padding: 20px;
   font-size: small;
 }
-.imagesme img {
-  width: 49%;
-  margin: 0px;
-  max-height: 370px;
+.desc {
+  width: 45%;
+}
+.desc div {
+  margin: 20px 0;
+}
+.desc div p {
+  font-size: large;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 .imagesme {
+  width: 50%;
+}
+.imagesme img {
   width: 100%;
+  margin: 0px;
 }
 .percentage {
   width: 100%;
@@ -198,9 +210,10 @@ main {
   height: 30px;
   margin: 10px 0;
 }
-.ninetyfive,
-.eightyfive,
-.eighty {
+.seventy,
+.seventyfive,
+.eighty,
+.twenty {
   color: white;
   display: flex;
   justify-content: center;
@@ -208,14 +221,17 @@ main {
   height: 30px;
   background-color: var(--darkgrey);
 }
-.ninetyfive {
-  width: 95%;
+.seventy {
+  width: 75%;
 }
-.eightyfive {
-  width: 85%;
+.seventyfive {
+  width: 75%;
 }
 .eighty {
   width: 80%;
+}
+.twenty {
+  width: 20%;
 }
 #resume {
   padding: 10px;
@@ -304,6 +320,9 @@ main {
   font-size: small;
   text-align: center;
 }
+.info div a {
+  color: white;
+}
 #address {
   background-color: var(--cyan);
 }
@@ -338,7 +357,7 @@ button:hover {
   background-color: var(--darkgrey);
   color: black;
 }
-/* footer  */
+/* footer 
 footer {
   background-color: var(--darkgrey);
   display: flex;
@@ -374,8 +393,9 @@ footer span {
 footer span:hover {
   background-color: black;
   color: white;
-}
+} */
 .copyright {
+  width: 100%;
   background-color: black;
   color: white;
   text-align: right;
