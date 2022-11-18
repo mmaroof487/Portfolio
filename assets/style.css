@@ -5,6 +5,15 @@
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
+:root {
+  --cyan: rgb(2, 141, 141);
+  --grey: rgb(200, 200, 200);
+  --lightgrey: rgb(148, 148, 148);
+  --darkgrey: rgb(104, 104, 104);
+}
+html {
+  scroll-behavior: smooth;
+}
 a {
   text-decoration: none;
   color: black;
@@ -19,12 +28,12 @@ main {
 .sidebar {
   width: 20%;
   height: 100vh;
-  background-color: #fff;
+  background-color: white;
   position: fixed;
 }
 .sidebarshadow {
   width: 20%;
-  height: 1000vh;
+  height: 100%;
   flex-shrink: 0;
 }
 .me {
@@ -35,10 +44,9 @@ main {
 }
 .sidebar p {
   margin: 0 0 30px 15px;
-  text-decoration: underline;
 }
 .sidebar > a:first-of-type {
-  color: rgb(2, 141, 141);
+  color: var(--cyan);
 }
 .sidebar > a {
   font-size: small;
@@ -50,7 +58,7 @@ main {
   color: black;
 }
 .sidebar > a:hover {
-  background-color: rgb(200, 200, 200);
+  background-color: var(--grey);
 }
 .sidebar div {
   margin-top: 30px;
@@ -91,7 +99,7 @@ main {
 .filter a {
   display: inline-block;
   padding: 10px;
-  background-color: #fff;
+  background-color: white;
   font-size: small;
 }
 .filter a:first-of-type,
@@ -100,11 +108,11 @@ main {
   color: white;
 }
 .filter a:hover {
-  background-color: rgb(191, 191, 191);
+  background-color: var(--grey);
 }
 #nigga:hover,
 .filter a:first-of-type:hover {
-  background-color: rgb(191, 191, 191);
+  background-color: var(--grey);
   color: black;
 }
 .line {
@@ -115,11 +123,13 @@ main {
 .line div {
   width: 100%;
   height: 4px;
-  background-color: rgb(198, 198, 198);
+  background-color: var(--grey);
 }
 /* images  */
 .images,
-.aboutme {
+.aboutme,
+.charges,
+#contactme {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -130,7 +140,7 @@ main {
 .img {
   display: inline-block;
   width: 32%;
-  background-color: #fff;
+  background-color: white;
   margin-bottom: 20px;
 }
 .imgcontent {
@@ -175,6 +185,211 @@ main {
 .imagesme {
   width: 100%;
 }
+.percentage {
+  width: 100%;
+  margin: 20px 0;
+}
+.percentage p {
+  margin-top: 10px;
+}
+.hundred {
+  width: 100%;
+  background-color: var(--lightgrey);
+  height: 30px;
+  margin: 10px 0;
+}
+.ninetyfive,
+.eightyfive,
+.eighty {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  background-color: var(--darkgrey);
+}
+.ninetyfive {
+  width: 95%;
+}
+.eightyfive {
+  width: 85%;
+}
+.eighty {
+  width: 80%;
+}
+#resume {
+  padding: 10px;
+  background-color: var(--darkgrey);
+  margin: 20px 0;
+  border-radius: 5px;
+}
+#resume a {
+  color: white;
+}
+#resume:hover {
+  background-color: rgb(173, 173, 173);
+}
+#resume:hover a {
+  color: black;
+}
+/* charges  */
+.charges {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.basic {
+  display: inline-block;
+  width: 31%;
+  background-color: white;
+  text-align: center;
+  opacity: 0.65;
+  transition: 0.5s ease-in-out;
+}
+.basic:hover {
+  opacity: 1;
+}
+.basic div {
+  padding: 15px;
+  border-bottom: 1px solid rgb(185, 184, 184);
+  font-size: small;
+}
+.basic a {
+  background-color: var(--cyan);
+  color: white;
+  display: inline-block;
+  padding: 10px 15px;
+  margin: 10px;
+}
+.basic a:hover {
+  background-color: black;
+  color: white;
+}
+.heading {
+  padding: 20px;
+  background-color: black;
+  color: white;
+  font-size: larger !important;
+}
+.heading2 {
+  padding: 20px;
+  background-color: var(--cyan);
+  color: white;
+  font-size: larger !important;
+}
+.para1 {
+  width: 100%;
+  margin: 20px;
+}
+/* contact  */
+#contactme {
+  background-color: var(--lightgrey);
+  justify-content: unset;
+  padding: 20px;
+}
+.info {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.info i {
+  margin-right: 5px;
+}
+.info div {
+  display: block;
+  width: 33.33%;
+  padding: 30px;
+  background-color: var(--darkgrey);
+  color: white;
+  font-size: small;
+  text-align: center;
+}
+#address {
+  background-color: var(--cyan);
+}
+.line2 {
+  width: 100%;
+  text-align: center;
+}
+.line2 div {
+  background-color: white;
+  height: 1px;
+  margin: 15px;
+}
+.inputs {
+  width: 100%;
+  font-size: small;
+}
+input {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  height: 30px;
+}
+button {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  margin: 10px 0;
+  border: 0;
+  border-radius: 2px;
+}
+button:hover {
+  background-color: var(--darkgrey);
+  color: black;
+}
+/* footer  */
+footer {
+  background-color: var(--darkgrey);
+  display: flex;
+  padding: 20px;
+  color: white;
+  font-size: small;
+}
+.para {
+  width: 100%;
+  margin-bottom: 5px;
+  font-size: large;
+  padding: 0;
+}
+footer div {
+  width: 33.33%;
+  padding: 10px;
+}
+.blog {
+  width: 100%;
+  border-bottom: 1px solid white;
+}
+.blog:hover {
+  background-color: var(--lightgrey);
+}
+footer span {
+  font-size: x-small;
+  background-color: var(--lightgrey);
+  color: black;
+  padding: 2px 5px;
+  display: inline-block;
+  margin: 5px;
+}
+footer span:hover {
+  background-color: black;
+  color: white;
+}
+.copyright {
+  background-color: black;
+  color: white;
+  text-align: right;
+  padding: 10px;
+}
+.copyright p {
+  font-size: small;
+}
+.blogimg {
+  width: 50px;
+  height: 30px;
+  margin-right: 10px;
+}
+/* responsive  */
 @media (max-width: 850px) {
   .sidebar,
   .sidebarshadow {
