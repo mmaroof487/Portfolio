@@ -24,13 +24,15 @@ body {
 main {
   display: flex;
 }
+/* loading screen  */
 .loadingscreen {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   position: absolute;
   background-color: black;
-  z-index: 1;
-  animation: disappear 3s 1 ease-in forwards;
+  z-index: 2;
+  display: block;
+  animation: disappear 3s 1 ease-in-out forwards;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,7 +46,7 @@ main {
 @keyframes disappear {
   from {
     opacity: 1;
-    z-index: 1;
+    z-index: 2;
   }
   to {
     opacity: 0;
@@ -57,6 +59,7 @@ main {
   height: 100vh;
   background-color: white;
   position: fixed;
+  z-index: 1;
 }
 .sidebarshadow {
   width: 20%;
@@ -101,6 +104,7 @@ main {
   display: flex;
   flex-direction: column;
   background-color: rgb(227, 227, 227);
+  z-index: 1;
 }
 .top {
   width: 100%;
@@ -311,7 +315,7 @@ main {
 }
 .img {
   display: inline-block;
-  width: 310px;
+  width: 290px;
   background-color: white;
   margin-bottom: 20px;
   opacity: 0.75;
@@ -501,6 +505,9 @@ footer span:hover {
 }
 /* responsive  */
 @media (width < 850px) {
+  /* .loadingscreen {
+    display: none;
+  } */
   .sidebar,
   .sidebarshadow {
     display: none;
