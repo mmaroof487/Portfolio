@@ -549,4 +549,7 @@ footer span:hover {
     overflow: hidden;
     text-overflow: ellipsis;
   }
+  .charges {
+    gap: 0;
+  }
 }
