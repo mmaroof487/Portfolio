@@ -32,7 +32,7 @@ main {
   background-color: black;
   z-index: 2;
   display: block;
-  animation: disappear 3s 1 ease-in-out forwards;
+  animation: disappear 7s 1 ease-in-out forwards;
   display: flex;
   justify-content: center;
   align-items: center;
