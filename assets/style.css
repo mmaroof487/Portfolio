@@ -100,6 +100,18 @@ main {
   margin-top: 10px;
 }
 /* top  */
+.sidebarmobile {
+  width: 100%;
+  padding: 15px;
+  display: none;
+}
+.mobme {
+  width: 100px;
+}
+.moblinks {
+  display: inline-block;
+  padding: 15px;
+}
 .notsidebar {
   display: flex;
   flex-direction: column;
@@ -511,6 +523,10 @@ footer span:hover {
   .sidebar,
   .sidebarshadow {
     display: none;
+  }
+  .sidebarmobile {
+    display: flex;
+    justify-content: space-between;
   }
   .images,
   .top {
