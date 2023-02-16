@@ -32,7 +32,7 @@ main {
   background-color: black;
   z-index: 2;
   display: block;
-  animation: disappear 7s 1 ease-in-out forwards;
+  animation: disappear 8s 1 ease-in-out forwards;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,11 +44,15 @@ main {
   color: white;
 }
 @keyframes disappear {
-  from {
+  0% {
     opacity: 1;
     z-index: 2;
   }
-  to {
+  50% {
+    opacity: 0;
+    z-index: 2;
+  }
+  100% {
     opacity: 0;
     z-index: 0;
   }
@@ -247,6 +251,9 @@ main {
   width: 100%;
   margin: 0px;
 }
+#linkedtwo {
+  display: none;
+}
 .percentage {
   width: 100%;
   margin: 20px 0;
@@ -312,12 +319,8 @@ main {
   flex-direction: column;
   flex-wrap: nowrap;
   overflow-y: scroll;
-  height: 605px;
 }
-.images,
-.aboutme,
-.charges,
-#contactme {
+.images {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -328,30 +331,70 @@ main {
 .img {
   display: inline-block;
   width: 290px;
-  background-color: white;
-  margin-bottom: 20px;
-  opacity: 0.75;
-  transition: 0.3s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-.imgcontent {
-  padding: 10px;
-  font-size: small;
-}
-
 .img img {
   width: 100%;
   height: 200px;
 }
-.img:hover {
+.slideshow {
+  display: flex;
+  flex-direction: column;
+}
+#slideshowfirst {
   opacity: 1;
+  animation-name: slideshow1;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-delay: 5s;
+}
+#slideshowsecond {
+  opacity: 0;
+  position: absolute;
+  animation-name: slideshow2;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-delay: 5s;
+}
+@keyframes slideshow1 {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes slideshow2 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 /* charges  */
+.aboutme,
+.charges,
+#contactme {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
 .charges {
   width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
 .basic {
   display: inline-block;
@@ -532,6 +575,9 @@ footer span:hover {
   .top {
     width: 100%;
   }
+  .desc {
+    padding-right: 0 !important;
+  }
   .notsidebar {
     width: 100%;
     display: flex;
@@ -556,6 +602,20 @@ footer span:hover {
   .img2 {
     width: 90%;
     opacity: 1;
+  }
+  .imagesme {
+    margin-top: 50px;
+  }
+  #linked {
+    display: none;
+  }
+  #linkedtwo {
+    display: inline-block;
+    height: 250px;
+    object-fit: contain;
+  }
+  #linked {
+    display: none;
   }
   .basic {
     opacity: 1;
