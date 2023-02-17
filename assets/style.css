@@ -337,7 +337,6 @@ main {
   width: 100%;
   height: 200px;
 }
-/* fixme: for mobile  */
 .slideshow {
   display: flex;
   flex-direction: column;
@@ -560,6 +559,11 @@ footer span:hover {
   margin-right: 10px;
 }
 /* responsive  */
+@media (width>1500px) {
+  .img {
+    width: 375px;
+  }
+}
 @media (width < 850px) {
   /* .loadingscreen {
     display: none;
@@ -609,14 +613,14 @@ footer span:hover {
   }
   /* todo: gap between about me and imagesme */
   .imagesme {
-    margin-top: 50px;
+    margin-top: 10px;
   }
   #linked {
     display: none;
   }
   #linkedtwo {
     display: inline-block;
-    height: 250px;
+    height: 300px;
     object-fit: contain;
   }
   #linked {
