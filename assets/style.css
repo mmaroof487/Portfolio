@@ -337,6 +337,7 @@ main {
   width: 100%;
   height: 200px;
 }
+/* fixme: for mobile  */
 .slideshow {
   display: flex;
   flex-direction: column;
@@ -603,6 +604,10 @@ footer span:hover {
     width: 90%;
     opacity: 1;
   }
+  .container {
+    display: none;
+  }
+  /* todo: gap between about me and imagesme */
   .imagesme {
     margin-top: 50px;
   }
