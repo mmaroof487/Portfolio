@@ -163,6 +163,9 @@ main {
   background-color: var(--grey);
   color: black;
 }
+#linktwobutton{
+  display: none;
+}
 .line {
   display: flex;
   justify-content: center;
@@ -257,7 +260,7 @@ main {
 }
 .percentage {
   width: 100%;
-  margin: 20px 0;
+  margin: 20px 0 0 0;
 }
 .percentage p {
   margin-top: 10px;
@@ -301,7 +304,7 @@ main {
 #resume {
   padding: 10px;
   background-color: var(--darkgrey);
-  margin: 20px 0;
+  margin: 20px 0 0 0;
   border-radius: 5px;
   transition: 0.4s ease-in-out;
 }
@@ -358,80 +361,56 @@ main {
   animation-delay: 5s;
 }
 @keyframes slideshow1 {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  0% {opacity: 1;}
+  50% {opacity: 0;}
+  100% {opacity: 1;}
 }
 @keyframes slideshow2 {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+  0% {opacity: 0;}
+  50% {opacity: 1;}
+  100% {opacity: 0;}
 }
 .containermob{
   width: 100%;
+  display: block;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 60px 0 70px;
+  margin: 0 0 190px 0;
+  display: none;
 }
 .slideshowmob{
   width: 90%;
+  margin: 0 5%;
   height: 200px;
   position: absolute;
   opacity: 0;
+  object-fit: cover;
 }
 #slide1{
   opacity: 1;
   animation-name: slideshowmobile1;
-  animation-duration: 30s;
-  animation-iteration-count: infinite;
-  animation-delay: 3s;
 }
 #slide2{
   animation-name: slideshowmobile2;
-  animation-duration: 30s;
-  animation-iteration-count: infinite;
-  animation-delay: 3s;
 }
 #slide3{
   animation-name: slideshowmobile3;
-  animation-duration: 30s;
-  animation-iteration-count: infinite;
-  animation-delay: 3s;
 }
 #slide4{
   animation-name: slideshowmobile4;
-  animation-duration: 30s;
-  animation-iteration-count: infinite;
-  animation-delay: 3s;
 }
 #slide5{
   animation-name: slideshowmobile5;
-  animation-duration: 30s;
-  animation-iteration-count: infinite;
-  animation-delay: 3s;
 }
 #slide6{
   animation-name: slideshowmobile6;
-  animation-duration: 30s;
-  animation-iteration-count: infinite;
-  animation-delay: 3s;
 }
 #slide7{
   animation-name: slideshowmobile7;
+}
+#slide1,#slide2,#slide3,#slide4,#slide5,#slide6,#slide7{
   animation-duration: 30s;
   animation-iteration-count: infinite;
   animation-delay: 3s;
@@ -720,7 +699,13 @@ footer span:hover {
     scale: 1.1;
   }
 }
-@media (width < 500px) {
+@media (width < 590px) {
+  #linkbutton{
+    display: none;
+  }
+  #linktwobutton{
+    display: inline-block;
+  }
   .img {
     width: 90%;
     opacity: 1;
@@ -746,6 +731,9 @@ footer span:hover {
   }
   #linked {
     display: none;
+  }
+  .containermob{
+    display: block;
   }
   .basic {
     opacity: 1;
