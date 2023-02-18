@@ -718,6 +718,10 @@ footer span:hover {
     display: none;
   }
   /* todo: gap between about me and imagesme */
+  .moblinks a{
+display: inline-block;
+margin: 0 5px;
+  }
   .imagesme {
     margin-top: 10px;
   }
