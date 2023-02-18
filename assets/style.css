@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-style: inherit;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
@@ -38,7 +39,7 @@ main {
   align-items: center;
 }
 .loadingscreen img {
-  width: 200px;
+  width: 75px;
 }
 .loadingscreen div {
   color: white;
@@ -377,6 +378,126 @@ main {
   100% {
     opacity: 0;
   }
+}
+.containermob{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 60px 0 70px;
+}
+.slideshowmob{
+  width: 90%;
+  height: 200px;
+  position: absolute;
+  opacity: 0;
+}
+#slide1{
+  opacity: 1;
+  animation-name: slideshowmobile1;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-delay: 3s;
+}
+#slide2{
+  animation-name: slideshowmobile2;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-delay: 3s;
+}
+#slide3{
+  animation-name: slideshowmobile3;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-delay: 3s;
+}
+#slide4{
+  animation-name: slideshowmobile4;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-delay: 3s;
+}
+#slide5{
+  animation-name: slideshowmobile5;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-delay: 3s;
+}
+#slide6{
+  animation-name: slideshowmobile6;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-delay: 3s;
+}
+#slide7{
+  animation-name: slideshowmobile7;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-delay: 3s;
+}
+@keyframes slideshowmobile1 {
+  0%{opacity: 1;}
+  16%{opacity: 0;}
+  33%{opacity: 0;}
+  49%{opacity: 0;}
+  66%{opacity: 0;}
+  83%{opacity: 0;}
+  100%{opacity: 0;}
+}
+@keyframes slideshowmobile2 {
+  0%{opacity: 0;}
+  16%{opacity: 1;}
+  33%{opacity: 0;}
+  49%{opacity: 0;}
+  66%{opacity: 0;}
+  83%{opacity: 0;}
+  100%{opacity: 0;}
+}
+@keyframes slideshowmobile3 {
+  0%{opacity: 0;}
+  16%{opacity: 0;}
+  33%{opacity: 1;}
+  49%{opacity: 0;}
+  66%{opacity: 0;}
+  83%{opacity: 0;}
+  100%{opacity: 0;}
+}
+@keyframes slideshowmobile4 {
+  0%{opacity: 0;}
+  16%{opacity: 0;}
+  33%{opacity: 0;}
+  49%{opacity: 1;}
+  66%{opacity: 0;}
+  83%{opacity: 0;}
+  100%{opacity: 0;}
+}
+@keyframes slideshowmobile5 {
+  0%{opacity: 0;}
+  16%{opacity: 0;}
+  33%{opacity: 0;}
+  49%{opacity: 0;}
+  66%{opacity: 1;}
+  83%{opacity: 0;}
+  100%{opacity: 0;}
+}
+@keyframes slideshowmobile6 {
+  0%{opacity: 0;}
+  16%{opacity: 0;}
+  33%{opacity: 0;}
+  49%{opacity: 0;}
+  66%{opacity: 0;}
+  83%{opacity: 1;}
+  100%{opacity: 0;}
+}
+@keyframes slideshowmobile7 {
+  0%{opacity: 0;}
+  16%{opacity: 0;}
+  33%{opacity: 0;}
+  49%{opacity: 0;}
+  66%{opacity: 0;}
+  83%{opacity: 0;}
+  100%{opacity: 1;}
 }
 /* charges  */
 .aboutme,
