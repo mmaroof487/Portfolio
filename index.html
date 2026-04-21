@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Mohammad Maroof — Full Stack Engineer</title>
     <link rel="icon" type="image/png" href="icon.png">
     <link rel="shortcut icon" type="image/png" href="icon.png">
@@ -131,6 +131,7 @@
             right: 0;
             z-index: 100;
             padding: 20px 60px;
+            padding-top: calc(20px + env(safe-area-inset-top));
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -1164,13 +1165,15 @@
 
             .section-wrap,
             #contact {
-                padding: 60px 24px;
+                padding: 100px 24px 60px;
+                padding-top: calc(100px + env(safe-area-inset-top));
             }
 
             nav,
             #hero {
                 padding-left: 24px;
                 padding-right: 24px;
+                padding-top: calc(20px + env(safe-area-inset-top));
             }
 
             footer {
@@ -1374,7 +1377,7 @@
             </p>
 
             <div class="hero-actions">
-                <a href="20-4.pdf" class="btn-primary" target="_blank" download>Download Resume</a>
+                <a href="Mohammad_Maroof_Resume.pdf" class="btn-primary" target="_blank" download>Download Resume</a>
                 <a href="#contact" class="btn-link">Contact</a>
                 <a href="https://github.com/mmaroof487" class="btn-link" target="_blank">GitHub</a>
                 <a href="https://www.linkedin.com/in/mohammad-maroof-80aa7024a/" class="btn-link"
