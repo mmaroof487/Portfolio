@@ -33,6 +33,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            cursor: none !important;
         }
 
         html {
@@ -91,8 +92,9 @@
                 display: none !important;
             }
 
-            body {
-                cursor: auto;
+            body,
+            * {
+                cursor: auto !important;
             }
         }
 
@@ -147,6 +149,8 @@
             font-size: 14px;
             color: var(--cyan);
             letter-spacing: 0.1em;
+            text-decoration: none;
+            cursor: pointer;
         }
 
         .hamburger {
@@ -249,14 +253,13 @@
             animation: fadeUp 0.9s 0.5s forwards;
             position: relative;
             max-width: 100%;
-            overflow-wrap: break-word;
         }
 
         .hero-name .glitch {
             position: relative;
             display: inline-block;
             max-width: 100%;
-            white-space: normal;
+            white-space: nowrap;
         }
 
         .hero-name .glitch::before,
@@ -1007,6 +1010,9 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .status-dot {
@@ -1076,6 +1082,11 @@
         }
 
         /* ───── EDUCATION CARD ───── */
+        .edu-container {
+            display: grid;
+            gap: 24px;
+        }
+
         .edu-card {
             display: flex;
             align-items: center;
@@ -1157,10 +1168,23 @@
             }
 
             nav,
-            #hero,
+            #hero {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+
             footer {
                 padding-left: 24px;
                 padding-right: 24px;
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            footer .footer-status {
+                position: static;
+                transform: none;
+                justify-content: center;
             }
 
             .tech-pill {
@@ -1198,9 +1222,65 @@
             }
 
             .exp-grid,
-            .projects-grid,
             .skills-container {
                 grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                display: flex;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                gap: 20px;
+                padding-bottom: 20px;
+                -ms-overflow-style: none;
+                /* IE/Edge */
+                scrollbar-width: none;
+                /* Firefox */
+                scroll-behavior: auto;
+                /* Removed smooth for custom JS easing */
+            }
+
+            .projects-grid.is-animating {
+                scroll-snap-type: none;
+                /* Let js slide freely */
+            }
+
+            .projects-grid::-webkit-scrollbar {
+                display: none;
+            }
+
+            .projects-grid .project-card {
+                flex: 0 0 85vw;
+                scroll-snap-align: center;
+                margin-right: 0;
+            }
+
+            .slider-dots {
+                display: flex;
+                justify-content: center;
+                gap: 8px;
+                margin-top: 24px;
+            }
+
+            .slider-dot {
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: var(--muted);
+                opacity: 0.3;
+                transition: background 0.3s, opacity 0.3s, width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                cursor: pointer;
+            }
+
+            .slider-dot.active {
+                width: 24px;
+                background: var(--cyan);
+                border-radius: 4px;
+                opacity: 1;
+            }
+
+            .slider-dots.hidden {
+                display: none;
             }
 
             .hero-stats {
@@ -1262,12 +1342,13 @@
 
     <!-- NAV -->
     <nav id="nav">
-        <div class="nav-logo">mm / portfolio</div>
+        <a href="#hero" class="nav-logo">mm / portfolio</a>
         <div class="hamburger" id="hamburger">☰</div>
         <div class="nav-links" id="nav-links">
             <a href="#experience">Experience</a>
             <a href="#projects">Projects</a>
             <a href="#skills">Skills</a>
+            <a href="#education">Education</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
@@ -1288,9 +1369,8 @@
             <div class="hero-role" id="typewriter"></div>
 
             <p class="hero-desc">
-                Full Stack Engineer specializing in secure, scalable, and AI-driven systems.
-                I design robust backend architectures and performant frontends with a strong focus on
-                security, observability, and absolute reliability.
+                I engineer secure backend systems and ship performant frontends — with a focus on observability and
+                reliability at every layer.
             </p>
 
             <div class="hero-actions">
@@ -1308,12 +1388,13 @@
                 <div class="stat-label">CGPA</div>
             </div>
             <div class="stat">
-                <div class="stat-num">10<span>+</span></div>
-                <div class="stat-label">Microservices</div>
-            </div>
-            <div class="stat">
                 <div class="stat-num">50<span>+</span></div>
                 <div class="stat-label">Test Cases</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">3<span>+</span></div>
+                <div class="stat-label">
+                    Production-grade Projects</div>
             </div>
         </div>
 
@@ -1346,10 +1427,10 @@
                         <li>Engineered an <strong>Agent Governance Layer</strong> via FastAPI and OPA, achieving 100%
                             prevention of prompt injection and data exfiltration through policy-as-code.</li>
                         <li>Built an end-to-end <strong>AI Observability Pipeline</strong> (OpenTelemetry, ELK,
-                            Prometheus, Grafana), delivering real-time monitoring across 10+ microservices and
-                            significantly reducing incident response times.</li>
-                        <li>Contributed to a <strong>Horizontal Security Control Plane</strong> spanning 11 enterprise
-                            domains, specializing in Byzantine risk modeling and secure integration fabrics.</li>
+                            Prometheus, Grafana), delivering real-time monitoring across 10+ microservices with
+                            centralized alerting and tracing.</li>
+                        <li>Owned the <strong>AI Telemetry and Agent Governance layers</strong> within a horizontal
+                            security control plane spanning 11 enterprise security domains.</li>
                     </ul>
                 </div>
 
@@ -1358,12 +1439,12 @@
                     <div class="exp-role">Frontend Development Intern</div>
                     <div class="exp-meta">Dec 2025 – Mar 2026 · TGL Innovation Accelerator · Chennai</div>
                     <ul class="exp-points">
-                        <li>Optimized the corporate web platform using <strong>Next.js 14</strong>, significantly
-                            improving Lighthouse performance and reducing frontend load times.</li>
-                        <li>Spearheaded full-stack development of <strong>Encrypti-V</strong> (a secure email platform),
-                            designing scalable REST APIs, the PostgreSQL schema, and a multi-tenant dashboard.</li>
-                        <li>Implemented military-grade <strong>End-to-End Encryption</strong> utilizing AES-256-GCM and
-                            post-quantum ML-KEM to ensure absolute data safety in transit and at rest.</li>
+                        <li>Rebuilt the corporate web platform on <strong>Next.js 14</strong>, reducing page load time
+                            and improving Core Web Vitals scores across the board.</li>
+                        <li>Built <strong>Encrypti-V</strong> end-to-end — REST API design, PostgreSQL schema, and a
+                            multi-tenant dashboard — as a secure email platform with React and Node.js.</li>
+                        <li>Implemented <strong>end-to-end encryption</strong> using AES-256-GCM and post-quantum
+                            ML-KEM, securing data in transit and at rest.</li>
                     </ul>
                 </div>
             </div>
@@ -1503,6 +1584,7 @@
                     </div>
                 </div>
             </div>
+            <div class="slider-dots hidden" id="project-slider-dots"></div>
         </div>
     </section>
 
@@ -1567,7 +1649,7 @@
             </div>
 
             <div class="edu-container">
-                <div class="edu-card reveal" style="margin-bottom:16px;">
+                <div class="edu-card reveal">
                     <div class="edu-logo" style="font-size:40px;">SRM</div>
                     <div class="edu-info">
                         <div class="edu-degree">B.Tech — Computer Science</div>
@@ -1585,14 +1667,14 @@
                     </div>
                 </div>
 
-                <div class="edu-card reveal" style="margin-bottom:16px; opacity:0.85;">
-                    <div class="edu-logo" style="font-size:32px;color:rgba(240,192,96,0.14);">SP</div>
+                <div class="edu-card reveal">
+                    <div class="edu-logo" style="font-size:40px;">SP</div>
                     <div class="edu-info">
-                        <div class="edu-degree" style="font-size:17px;">Higher Secondary Education</div>
+                        <div class="edu-degree">Higher Secondary Education</div>
                         <div class="edu-school">SP Higher Secondary School, Srinagar</div>
                         <div class="edu-meta">
                             <div class="edu-stat">
-                                <div class="edu-stat-val" style="color:var(--gold);">95.4</div>
+                                <div class="edu-stat-val">95.4</div>
                                 <div class="edu-stat-key">Percentage</div>
                             </div>
                             <div class="edu-stat">
@@ -1666,6 +1748,12 @@
             <div class="status-dot"></div>
             <p style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);">Available for hire</p>
         </div>
+        <div class="footer-stack" style="display: flex; align-items: center; gap: 16px;">
+            <a href="https://github.com/mmaroof487" target="_blank"
+                style="color:var(--cyan); font-family: 'JetBrains Mono', monospace; font-size: 11px; text-decoration: none; border-bottom: 1px solid transparent; transition: 0.3s;"
+                onmouseover="this.style.borderBottom='1px solid var(--cyan)'"
+                onmouseout="this.style.borderBottom='1px solid transparent'">GitHub</a>
+        </div>
     </footer>
 
     <script>
@@ -1717,7 +1805,7 @@
                 this.vx = (Math.random() - 0.5) * 0.3;
                 this.vy = (Math.random() - 0.5) * 0.3;
                 this.size = Math.random() * 1.5 + 0.3;
-                this.alpha = Math.random() * 0.5 + 0.1;
+                this.alpha = Math.random() * 0.5 + 0.3;
                 this.color = Math.random() > 0.7 ? '#00dcff' : '#7b5cff';
             }
             update() {
@@ -1740,7 +1828,7 @@
             }
         }
 
-        const N = Math.min(120, Math.floor(W * H / 12000));
+        const N = Math.min(150, Math.floor(W * H / 10000));
         for (let i = 0; i < N; i++) particles.push(new Particle());
 
         function drawConnections() {
@@ -1754,7 +1842,7 @@
                         ctx.beginPath();
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.strokeStyle = `rgba(0, 220, 255, ${0.04 * (1 - d / 100)})`;
+                        ctx.strokeStyle = `rgba(0, 220, 255, ${0.08 * (1 - d / 100)})`;
                         ctx.lineWidth = 0.5;
                         ctx.stroke();
                     }
@@ -1763,10 +1851,6 @@
         }
 
         let canvasActive = true;
-        const heroObserver = new IntersectionObserver(entries => {
-            entries.forEach(e => { canvasActive = e.isIntersecting; });
-        }, { threshold: 0 });
-        heroObserver.observe(document.getElementById('hero'));
 
         function loop() {
             if (canvasActive) {
@@ -1784,9 +1868,48 @@
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
-        document.querySelectorAll('.nav-links a').forEach(a => {
-            a.addEventListener('click', () => {
-                navLinks.classList.remove('active');
+        function smoothScrollTo(targetPosition, duration) {
+            const startPosition = window.pageYOffset;
+            const distance = targetPosition - startPosition;
+            let startTime = null;
+
+            function animation(currentTime) {
+                if (startTime === null) startTime = currentTime;
+                const timeElapsed = currentTime - startTime;
+                const progress = Math.min(timeElapsed / duration, 1);
+
+                const ease = progress < 0.5
+                    ? 4 * progress * progress * progress
+                    : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+                window.scrollTo(0, startPosition + distance * ease);
+
+                if (timeElapsed < duration) {
+                    requestAnimationFrame(animation);
+                }
+            }
+            requestAnimationFrame(animation);
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', (e) => {
+                const targetId = a.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+
+                    if (a.closest('.nav-links')) {
+                        navLinks.classList.remove('active');
+                    }
+
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+
+                    smoothScrollTo(targetPosition, 1500);
+
+                    window.history.pushState(null, null, targetId);
+                }
             });
         });
 
@@ -1798,10 +1921,11 @@
         // ── TYPEWRITER ──
         const roles = [
             'Full Stack Engineer',
-            'Security Enthusiast',
-            'Distributed Systems Builder',
-            'Next.js Specialist',
-            'Python / FastAPI Developer'
+            'Security & Observability Engineer',
+            'Next.js / React Developer',
+            'Python / FastAPI / Node.js',
+            'Cryptography Enthusiast',
+            'PostgreSQL / Redis / MongoDB',
         ];
         let ri = 0, ci = 0, deleting = false;
         const tw = document.getElementById('typewriter');
@@ -1864,6 +1988,109 @@
                 randomPill.classList.add('highlight');
             }
         }, 4000);
+
+        // ── MOBILE PROJECT SLIDER ──
+        const projectsGrid = document.querySelector('.projects-grid');
+        const sliderDotsContainer = document.getElementById('project-slider-dots');
+        let autoSlideInterval;
+        let pGridHovered = false;
+
+        function customSmoothScroll(element, targetX, duration) {
+            return new Promise((resolve) => {
+                element.classList.add('is-animating');
+                const startX = element.scrollLeft;
+                const distance = targetX - startX;
+                let startTime = null;
+
+                function animation(currentTime) {
+                    if (!startTime) startTime = currentTime;
+                    const elapsed = currentTime - startTime;
+                    const Math_min = Math.min(elapsed / duration, 1);
+                    const ease = -(Math.cos(Math.PI * Math_min) - 1) / 2;
+
+                    element.scrollLeft = startX + distance * ease;
+
+                    if (elapsed < duration) {
+                        requestAnimationFrame(animation);
+                    } else {
+                        element.classList.remove('is-animating');
+                        element.scrollLeft = targetX;
+                        resolve();
+                    }
+                }
+                requestAnimationFrame(animation);
+            });
+        }
+
+        function initSliderDots() {
+            if (!projectsGrid || !sliderDotsContainer) return;
+            const cards = projectsGrid.querySelectorAll('.project-card');
+            sliderDotsContainer.innerHTML = '';
+            cards.forEach((_, i) => {
+                const dot = document.createElement('div');
+                dot.classList.add('slider-dot');
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => {
+                    const cardWidth = cards[0].offsetWidth;
+                    const gap = 20;
+                    customSmoothScroll(projectsGrid, (cardWidth + gap) * i, 800);
+                });
+                sliderDotsContainer.appendChild(dot);
+            });
+
+            projectsGrid.addEventListener('scroll', () => {
+                const scrollLeft = projectsGrid.scrollLeft;
+                const cardWidth = cards[0].offsetWidth;
+                const gap = 20;
+                const index = Math.round(scrollLeft / (cardWidth + gap));
+                const dots = sliderDotsContainer.querySelectorAll('.slider-dot');
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+            }, { passive: true });
+        }
+
+        function startAutoSlide() {
+            if (window.innerWidth > 900) {
+                if (sliderDotsContainer) sliderDotsContainer.classList.add('hidden');
+                return;
+            }
+            if (sliderDotsContainer) sliderDotsContainer.classList.remove('hidden');
+            if (autoSlideInterval) clearInterval(autoSlideInterval);
+            autoSlideInterval = setInterval(() => {
+                if (!projectsGrid || pGridHovered) return;
+                const card = projectsGrid.querySelector('.project-card');
+                if (!card) return;
+
+                const cardWidth = card.offsetWidth;
+                const gap = 20;
+                let maxScroll = projectsGrid.scrollWidth - projectsGrid.clientWidth;
+
+                let targetX = projectsGrid.scrollLeft + cardWidth + gap;
+                if (projectsGrid.scrollLeft >= maxScroll - 10) {
+                    targetX = 0;
+                }
+                customSmoothScroll(projectsGrid, targetX, 1000);
+            }, 3500);
+        }
+
+        function stopAutoSlide() {
+            if (autoSlideInterval) clearInterval(autoSlideInterval);
+        }
+
+        if (projectsGrid) {
+            initSliderDots();
+            projectsGrid.addEventListener('touchstart', () => { pGridHovered = true; stopAutoSlide(); }, { passive: true });
+            projectsGrid.addEventListener('touchend', () => { pGridHovered = false; setTimeout(startAutoSlide, 3000); });
+            projectsGrid.addEventListener('mouseenter', () => { pGridHovered = true; stopAutoSlide(); });
+            projectsGrid.addEventListener('mouseleave', () => { pGridHovered = false; startAutoSlide(); });
+        }
+
+        startAutoSlide();
+        window.addEventListener('resize', () => {
+            stopAutoSlide();
+            startAutoSlide();
+        });
 
         // ── COPY EMAIL ──
         function copyEmail() {
