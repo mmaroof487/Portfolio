@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohammad Maroof — Full Stack Engineer</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="shortcut icon" type="image/png" href="icon.png">
+    <link rel="apple-touch-icon" href="icon.png">
     <link
         href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&display=swap"
         rel="stylesheet">
@@ -237,7 +240,7 @@
         }
 
         .hero-name {
-            font-size: clamp(40px, 10vw, 110px);
+            font-size: clamp(32px, 8vw, 80px);
             font-weight: 800;
             line-height: 0.9;
             letter-spacing: -0.02em;
@@ -245,11 +248,15 @@
             opacity: 0;
             animation: fadeUp 0.9s 0.5s forwards;
             position: relative;
+            max-width: 100%;
+            overflow-wrap: break-word;
         }
 
         .hero-name .glitch {
             position: relative;
             display: inline-block;
+            max-width: 100%;
+            white-space: normal;
         }
 
         .hero-name .glitch::before,
@@ -1095,6 +1102,8 @@
             font-family: 'JetBrains Mono', monospace;
             flex-shrink: 0;
             line-height: 1;
+            width: 100px;
+            text-align: center;
         }
 
         .edu-info {
@@ -1279,8 +1288,8 @@
             <div class="hero-role" id="typewriter"></div>
 
             <p class="hero-desc">
-                Full Stack Engineer specializing in secure, scalable, and AI-driven systems. 
-                I design robust backend architectures and performant frontends with a strong focus on 
+                Full Stack Engineer specializing in secure, scalable, and AI-driven systems.
+                I design robust backend architectures and performant frontends with a strong focus on
                 security, observability, and absolute reliability.
             </p>
 
@@ -1334,9 +1343,13 @@
                     <div class="exp-role">Intern — AI Security Platform</div>
                     <div class="exp-meta">Mar 2026 – Present · TalenciaGlobal · Chennai, India</div>
                     <ul class="exp-points">
-                        <li>Engineered an <strong>Agent Governance Layer</strong> via FastAPI and OPA, achieving 100% prevention of prompt injection and data exfiltration through policy-as-code.</li>
-                        <li>Built an end-to-end <strong>AI Observability Pipeline</strong> (OpenTelemetry, ELK, Prometheus, Grafana), delivering real-time monitoring across 10+ microservices and significantly reducing incident response times.</li>
-                        <li>Contributed to a <strong>Horizontal Security Control Plane</strong> spanning 11 enterprise domains, specializing in Byzantine risk modeling and secure integration fabrics.</li>
+                        <li>Engineered an <strong>Agent Governance Layer</strong> via FastAPI and OPA, achieving 100%
+                            prevention of prompt injection and data exfiltration through policy-as-code.</li>
+                        <li>Built an end-to-end <strong>AI Observability Pipeline</strong> (OpenTelemetry, ELK,
+                            Prometheus, Grafana), delivering real-time monitoring across 10+ microservices and
+                            significantly reducing incident response times.</li>
+                        <li>Contributed to a <strong>Horizontal Security Control Plane</strong> spanning 11 enterprise
+                            domains, specializing in Byzantine risk modeling and secure integration fabrics.</li>
                     </ul>
                 </div>
 
@@ -1345,9 +1358,12 @@
                     <div class="exp-role">Frontend Development Intern</div>
                     <div class="exp-meta">Dec 2025 – Mar 2026 · TGL Innovation Accelerator · Chennai</div>
                     <ul class="exp-points">
-                        <li>Optimized the corporate web platform using <strong>Next.js 14</strong>, significantly improving Lighthouse performance and reducing frontend load times.</li>
-                        <li>Spearheaded full-stack development of <strong>Encrypti-V</strong> (a secure email platform), designing scalable REST APIs, the PostgreSQL schema, and a multi-tenant dashboard.</li>
-                        <li>Implemented military-grade <strong>End-to-End Encryption</strong> utilizing AES-256-GCM and post-quantum ML-KEM to ensure absolute data safety in transit and at rest.</li>
+                        <li>Optimized the corporate web platform using <strong>Next.js 14</strong>, significantly
+                            improving Lighthouse performance and reducing frontend load times.</li>
+                        <li>Spearheaded full-stack development of <strong>Encrypti-V</strong> (a secure email platform),
+                            designing scalable REST APIs, the PostgreSQL schema, and a multi-tenant dashboard.</li>
+                        <li>Implemented military-grade <strong>End-to-End Encryption</strong> utilizing AES-256-GCM and
+                            post-quantum ML-KEM to ensure absolute data safety in transit and at rest.</li>
                     </ul>
                 </div>
             </div>
@@ -1383,8 +1399,9 @@
                     <div class="project-name">Argus</div>
                     <div class="project-subtitle">AI-Powered Secure SQL Gateway</div>
                     <p class="project-desc">
-                        A production-grade intelligent SQL gateway solving AI, security, and performance challenges. 
-                        Features multi-layer security (RBAC, injection prevention) and an LLM-based natural language to SQL engine with ~6x performance improvement via Redis.
+                        A production-grade intelligent SQL gateway solving AI, security, and performance challenges.
+                        Features multi-layer security (RBAC, injection prevention) and an LLM-based natural language to
+                        SQL engine with ~6x performance improvement via Redis.
                         Validated with 50+ rigorous Postman security and failure-handling test cases.
                     </p>
                     <div class="project-stack">
@@ -1414,8 +1431,10 @@
                     <div class="project-name">AthletIQ</div>
                     <div class="project-subtitle">AI-Powered Fitness Platform</div>
                     <p class="project-desc">
-                        A scalable full-stack fitness platform offering personalized workouts, calorie tracking, and AI-based recommendations. 
-                        Designed reliable REST APIs and robust PostgreSQL schemas, comprehensively validated via Postman for edge cases and failure handling.
+                        A scalable full-stack fitness platform offering personalized workouts, calorie tracking, and
+                        AI-based recommendations.
+                        Designed reliable REST APIs and robust PostgreSQL schemas, comprehensively validated via Postman
+                        for edge cases and failure handling.
                     </p>
                     <div class="project-stack">
                         <span class="tag">React.js</span>
@@ -1498,7 +1517,8 @@
                 <div class="section-line"></div>
             </div>
 
-            <div class="tech-cloud reveal" style="justify-content: center; max-width: 1050px; margin: 40px auto 0; gap: 16px;">
+            <div class="tech-cloud reveal"
+                style="justify-content: center; max-width: 1050px; margin: 40px auto 0; gap: 16px;">
                 <span class="tech-pill">TypeScript</span>
                 <span class="tech-pill">JavaScript</span>
                 <span class="tech-pill">React</span>
@@ -1837,7 +1857,7 @@
             const pills = document.querySelectorAll('.tech-pill');
             if (pills.length === 0) return;
             pills.forEach(p => p.classList.remove('highlight'));
-            
+
             const count = Math.floor(Math.random() * 4) + 6; // 6 to 9 skills highlighted at once
             for (let i = 0; i < count; i++) {
                 const randomPill = pills[Math.floor(Math.random() * pills.length)];
